@@ -8,9 +8,6 @@ public :
     StepGenerator(int _seed);
     vector<double> generateTimesSeries(int) override;
 
-    private : 
-        double getVal();
-
 };
 
 #endif

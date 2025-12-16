@@ -10,7 +10,6 @@ public :
 private :
     double moyenne;
     double et;
-    double boxMuller();
 };
 
 #endif
