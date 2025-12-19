@@ -11,14 +11,17 @@ class TimeSerieDataset{
         vector<int> labels;
         int maxLength;
         int numberOfSamples;
-        void zNormalisation();
-        void addTimeSerie(vector<double> data, int label);
-        void addTimeSerie(vector<double> data);
+        vector<double> zNormalisation(vector<double> data);
 
     public :
-        TimeSerieDataset(bool _znormalise, bool _isTrain,const vector<double>& _data, const vector<int>& _labels,int maxLength, int numberOfSamples);
+        TimeSerieDataset(bool _znormalise, bool _isTrain);
+        void addTimeSerie(vector<double> data, int label);
+        void addTimeSerie(vector<double> data);
         double eclidianDistance(const vector<double>& s1, const vector<double>& s2);
         double DTW(const vector<double>& s1, const vector<double>& s2);
+        vector<vector<double>> getData() const { return data; }
+        vector<int> getLabels() const { return labels; }
+        int getNumberOfSamples() const { return numberOfSamples; }
 
 };
 
